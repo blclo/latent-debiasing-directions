@@ -16,7 +16,15 @@ These two points of reference can help us verify the theory: the higher the cosi
 In our paper we can see an example of how despite using the prompt ”A **wealthy** African man and his house”, the highest embedding similarities belong to attributes such as poverty-stricken or underprivileged.
 
 # Mitigating biases through latent directions
+The mitigation strategy consists of two main parts. First, we have to obtain the latent direction. Secondly, we need to apply it!
 
+1. Finding the latent direction - to find it, we need to generate two sample datasets and save their corresponding latents. The code found in ``, helps you build this dataset and ontain a python dictionary with the files and class labels.
+
+   - What sample datasets should I choose? The datasets should represent the transition you aim to achieve through your latent direction. For instance, if you aim to debias light-skin color images, to generate more diversity with dark-skin color, you should choose to generate a dataset containing light-skin individuals and another one containing dark-skin ones. These way we can ensure the latents belong to the two different groups and we can train the latent direction to differentiate between them :)
+
+2. Obtain the latent direction: TODO: explain SVM
+3. Apply the latent direction with a chosen weight:
+   
 # Citation
 If this work is insightful and relevant for your research, we would highly appreciate if you could cite it:
 
