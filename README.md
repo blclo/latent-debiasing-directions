@@ -1,5 +1,5 @@
 # Debiasing text-to-image models with Latent Directions
-[summary_of_results](https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png)
+![summary_of_results](https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png)
 
 ## Code
 You can find two main folders: `understanding` and `mitigation`.
