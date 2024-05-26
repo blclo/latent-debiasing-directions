@@ -1,6 +1,7 @@
 # Debiasing text-to-image models with Latent Directions
-
-<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png" alt="Summary of results" width="300">
+<div style="text-align: center;">
+<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png" alt="Summary of results" width="400">
+</div>
 
 ## Code
 You can find two main folders: `understanding` and `mitigation`.
@@ -16,8 +17,16 @@ These two points of reference can help us verify the theory: the higher the cosi
 
 In our paper we can see an example of how despite using the prompt ”A **wealthy** African man and his house”, the highest embedding similarities belong to attributes such as poverty-stricken or underprivileged.
 
+<div style="text-align: center;">
+<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/understandingTool.jpeg" alt="Understanding tool" width="400">
+</div>
+
 ## Mitigating biases through latent directions
 The mitigation strategy consists of two main parts. First, we have to obtain the latent direction. Secondly, we need to apply it!
+
+<div style="text-align: center;">
+<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/model_training.jpeg" alt="Summary of training and mitigation" width="400">
+</div>
 
 1. Finding the latent direction 🕵️‍♀
     - We need to generate two sample datasets and save their corresponding latents. The code found in `generate_dataset_save_latents.py`, helps you build this dataset and obtain a json dictionary with the latents files and class label. You need to run this script twice, once per each class/dataset.
