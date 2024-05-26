@@ -1,7 +1,11 @@
 # Debiasing text-to-image models with Latent Directions
-<div style="text-align: center;">
-<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png" alt="Summary of results" width="400">
-</div>
+Welcome to the repository of the paper **Latent Directions: A Simple Pathway to Bias Mitigation in Generative AI**. This paper has been accepted to CVPR 2024 in ReGenAI: First Workshop on Responsible Generative AI. 
+
+The research presents a novel method for bias mitigation in Diffusion models which achieves diverse and inclusive images without any hard prompting or embedding alteration, solely relaying in the initial noise provided to the model.
+
+<p align="center">
+    <img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/principal.png" alt="Summary of results" width="400">
+</p>
 
 ## Code
 You can find two main folders: `understanding` and `mitigation`.
@@ -17,16 +21,16 @@ These two points of reference can help us verify the theory: the higher the cosi
 
 In our paper we can see an example of how despite using the prompt ”A **wealthy** African man and his house”, the highest embedding similarities belong to attributes such as poverty-stricken or underprivileged.
 
-<div style="text-align: center;">
+<p align="center">
 <img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/understandingTool.jpeg" alt="Understanding tool" width="400">
-</div>
+</p>
 
 ## Mitigating biases through latent directions
 The mitigation strategy consists of two main parts. First, we have to obtain the latent direction. Secondly, we need to apply it!
 
-<div style="text-align: center;">
-<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/model_training.jpeg" alt="Summary of training and mitigation" width="400">
-</div>
+<p align="center">
+<img src="https://github.com/blclo/latent-debiasing-directions/blob/main/images/model_training.jpeg" alt="Summary of training and mitigation" width="800">
+</p>
 
 1. Finding the latent direction 🕵️‍♀
     - We need to generate two sample datasets and save their corresponding latents. The code found in `generate_dataset_save_latents.py`, helps you build this dataset and obtain a json dictionary with the latents files and class label. You need to run this script twice, once per each class/dataset.
