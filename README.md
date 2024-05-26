@@ -1,1 +1,32 @@
-# latent-debiasing-directions
+# Debiasing text-to-image models through Latent Directions
+
+
+# Code
+You can find two main folders: `understanding` and `mitigation`.
+- Under the `understanding` directory are all the scripts related to the understanding pipeline. 
+- The `mitigation` directory contains all the scripts that can help you find the latent directions and apply them after their generation.
+
+# Understanding biases
+We provide a tool for developers for bias understanding which targets two key points: 
+1. We aim to help comprehending the connections between embeddings and generations, analysing the embedding relationship between attributes and concepts in text and vision encoders. This can reveal innate biases and make us conscious of the existing problems.
+2. The tool detects the social characteristics and objects presented in the image. This helps us understanding the impact of the biases, looking at the impacted generations and the statistics.
+
+These two points of reference can help us verify the theory: the higher the cosine similarity between concept and attribute, the more likely is to see these attributes present in the generated images of the concept. If we find a high cosine similarity between a specific concept and attribute, but this is not so clear when looking at the statistics of their detection in the generated images, then we would have a misalignment and perhaps something to investigate!
+
+In our paper we can see an example of how despite using the prompt ”A **wealthy** African man and his house”, the highest embedding similarities belong to attributes such as poverty-stricken or underprivileged.
+
+# Mitigating biases through latent directions
+The mitigation strategy consists of two main parts. First, we have to obtain the latent direction. Secondly, we need to apply it!
+
+1. Finding the latent direction - to find it, we need to generate two sample datasets and save their corresponding latents. The code found in ``, helps you build this dataset and ontain a python dictionary with the files and class labels.
+
+   - What sample datasets should I choose? The datasets should represent the transition you aim to achieve through your latent direction. For instance, if you aim to debias light-skin color images, to generate more diversity with dark-skin color, you should choose to generate a dataset containing light-skin individuals and another one containing dark-skin ones. These way we can ensure the latents belong to the two different groups and we can train the latent direction to differentiate between them :)
+
+2. Obtain the latent direction: TODO: explain SVM
+3. Apply the latent direction with a chosen weight:
+   
+# Citation
+If this work is insightful and relevant for your research, we would highly appreciate if you could cite it:
+
+For any questions, please do not hesitate to reach out to Carolina Lopez at clopezolmos@microsoft.com
+
