@@ -18,12 +18,15 @@ In our paper we can see an example of how despite using the prompt ”A **wealth
 # Mitigating biases through latent directions
 The mitigation strategy consists of two main parts. First, we have to obtain the latent direction. Secondly, we need to apply it!
 
-1. Finding the latent direction - to find it, we need to generate two sample datasets and save their corresponding latents. The code found in ``, helps you build this dataset and ontain a python dictionary with the files and class labels.
+1. Finding the latent direction:
+    - We need to generate two sample datasets and save their corresponding latents. The code found in `generate_dataset_save_latents.py`, helps you build this dataset and obtain a json dictionary with the latents files and class label. You need to run this script twice, once per each class/dataset.
 
-   - What sample datasets should I choose? The datasets should represent the transition you aim to achieve through your latent direction. For instance, if you aim to debias light-skin color images, to generate more diversity with dark-skin color, you should choose to generate a dataset containing light-skin individuals and another one containing dark-skin ones. These way we can ensure the latents belong to the two different groups and we can train the latent direction to differentiate between them :)
+        - What sample datasets should I choose? The datasets should represent the transition you aim to achieve through your latent direction. For instance, if you aim to debias light-skin color images, to generate more diversity with dark-skin color, you should choose to generate a dataset containing light-skin individuals and another one containing dark-skin ones. These way we can ensure the latents belong to the two different groups and we can train the latent direction to differentiate between them :)
 
-2. Obtain the latent direction: TODO: explain SVM
-3. Apply the latent direction with a chosen weight:
+    - Obtain the latent direction. The code found in `obtain_latent_direction.py` iterates through the merged* json dictionary, separating the data from the two classes. A SVM classifier separates linearly between the classes and returns 10 diffent latent directions per class. Each of those latent directions, differ in the latent step used for their training, from step 0 (Gaussian Noise) to step 45 (almost the complete denoised image). 
+
+2. Apply the latent direction with a chosen weight:
+    The paper shows how the impact of the weight selection is smaller than the impact of the latent step used in the training. As a result, we recommend choosing the latent direction obtained through step 10, which corresponds to `idx_latent` of 2. Once we have its file path, we can use the code found in `generate_from_latent_direction.py`, modify the weight and the number of images to generate and obtain debiased results!
    
 # Citation
 If this work is insightful and relevant for your research, we would highly appreciate if you could cite it:
