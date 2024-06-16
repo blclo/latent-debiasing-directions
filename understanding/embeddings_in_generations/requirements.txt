@@ -1,0 +1,10 @@
+torch
+torchvision
+diffusers
+transformers
+matplotlib
+seaborn
+adjustText
+plotly
+openai-clip
+setuptools

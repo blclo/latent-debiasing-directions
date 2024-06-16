@@ -20,6 +20,8 @@ Some more possible charts have been explored, for other possible representations
 ![stacked_chart](https://github.com/blclo/GlobalDataReps-RAI/blob/main/understanding/embeddings/media/stacked_bar_test.svg)
 ![single_bars](https://github.com/blclo/GlobalDataReps-RAI/blob/main/understanding/embeddings/media/single_bar_test.svg)
 
+## Requirements
+Run `pip install -r requirements.txt`
 
 ## Running the automatic pipeline 
 ![single_bars_cleaner](https://github.com/blclo/GlobalDataReps-RAI/blob/main/understanding/embeddings/media/text_single_bars_cleaner_attributes_relationship_plot.png)
@@ -32,6 +34,7 @@ Some more possible charts have been explored, for other possible representations
 This pipeline allows you obtain the relationship between the text embeddings of the main [concept] to each of its related [attributes]:
 
 `python teru_veru_pipeline.py --attributes "path_to_text_file" --concept "concept" --text`
+e.g. `python teru_veru_pipeline.py --attributes "/Users/blclo/GlobalDataReps-RAI/understanding/embeddings/data/related_attributes_firefighter.txt" --concept "firefighter" --text`
 
 will result in: "Bar chart stored at: path_to_image.png"
 
