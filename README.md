@@ -49,5 +49,13 @@ The mitigation strategy consists of two main parts. First, we have to obtain the
 ## Citation
 If this work is insightful and relevant for your research, we would highly appreciate if you could cite it:
 
+@InProceedings{lopez2024latent,
+        author    = {C. Lopez Olmos, A. Neophytou, S. Sengupta, and D. P. Papadopoulos},
+        title     = {Latent Directions: A Simple Pathway to Bias Mitigation in Generative AI},
+        booktitle = {Proceedings of the CVPR Conference at ReGenAI: First Workshop on Responsible Generative AI},
+        month     = {February},
+        year      = {2024}
+    }
+
 For any questions, please do not hesitate to reach out to Carolina Lopez at clopezolmos@microsoft.com
 
